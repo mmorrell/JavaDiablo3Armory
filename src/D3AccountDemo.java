@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -6,12 +7,14 @@ public class D3AccountDemo
 {
     public static void main(String args[])
     {
-
-    	D3Account myd3 = new D3Account("Eurodance", "1289");
-    
-    	System.out.println("\n" + myd3.getHeroInfo());
-    		
+    	//This is broken fix it lol
     	ItemFunctions itemDatabase = new ItemFunctions();
+    	
+    	
+    	D3Account myd3 = new D3Account("Eurodance", "1289");
+
+    	System.out.println("\n" + myd3.getHeroInfo());
+   
     	
     	for (Hero x : myd3.getHeroList())
     	{
@@ -22,13 +25,10 @@ public class D3AccountDemo
     		    System.out.println(String.format("%s: %s", entry.getKey(), (entry.getValue().equals(null) ? "" : entry.getValue())));
     		    
     		    String tooltipParams = entry.getValue().getTooltipParams();
-    		    if (!tooltipParams.isEmpty())
-    		    {
-    		    	itemDatabase.addItem(tooltipParams, itemDatabase.getItemJson(tooltipParams));
-    		    	System.out.println(tooltipParams + " -- added!");
-    		    }
+		    	itemDatabase.addItem(tooltipParams, itemDatabase.getItemJson(tooltipParams));
     		}
 
     	}
+
     }
 }

@@ -19,7 +19,6 @@ public class Battletag
 		String[] battleTagArray = battleTag.split("#");
 		this.battleTagName = battleTagArray[0];
 		this.battleTagNumber = battleTagArray[1];
-		System.out.println(battleTagArray[0] + battleTagArray[1]);
 	}
 	
 	public ArrayList<Hero> getHeroes()

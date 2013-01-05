@@ -24,7 +24,7 @@ public class D3Account
 	{
 		try
 		{
-			battletag = new Gson().fromJson(HTTPClient.Get(String.format("http://us.battle.net/api/d3/profile/%s-%s/", battleTagName.toLowerCase(), battleTagNumber)), Battletag.class);
+			battletag = new Gson().fromJson(new HTTPClient().Get(String.format("http://us.battle.net/api/d3/profile/%s-%s/", battleTagName.toLowerCase(), battleTagNumber)), Battletag.class);
 			battletag.parseBattletag();
 			
 			if (battletag.getName() != null)

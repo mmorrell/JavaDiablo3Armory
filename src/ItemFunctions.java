@@ -24,22 +24,25 @@ public class ItemFunctions
 	
 	public void addItem(String itemId, String itemJson)
 	{
-		try
+		if (!itemId.isEmpty())
 		{
-			PreparedStatement pstmt = con.prepareStatement("REPLACE d3_item( item_id, item_date_modified, item_json ) VALUES(?, current_timestamp, ?)");
-			pstmt.setString(1, itemId);
-			pstmt.setString(2, itemJson);
+			try
+			{
+				PreparedStatement pstmt = con.prepareStatement("REPLACE d3_item( item_id, item_date_modified, item_json ) VALUES(?, current_timestamp, ?)");
+				pstmt.setString(1, itemId);
+				pstmt.setString(2, itemJson);
+				
+				pstmt.executeUpdate();
+	
+			} catch (Exception e)
+			{
+				System.out.println("Error:\n");
+				System.out.println(e.getMessage());
+				e.printStackTrace();
+			}
 			
-			pstmt.executeUpdate();
-
-		} catch (Exception e)
-		{
-			System.out.println("Error:\n");
-			System.out.println(e.getMessage());
-			e.printStackTrace();
+			System.out.println("addItem completed.");
 		}
-		
-		System.out.println("\naddItem completed.");
 	}
 	
 	public String getItemJson(String itemId)

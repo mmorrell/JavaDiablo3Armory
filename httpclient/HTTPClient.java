@@ -74,7 +74,7 @@ public class HTTPClient
 			return "";
 		} 
     }
-    public static String Get(String inputURL)
+    public String Get(String inputURL)
     {
     	String url = inputURL;
     	HttpURLConnection connection;
