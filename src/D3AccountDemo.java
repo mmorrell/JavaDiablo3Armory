@@ -7,11 +7,9 @@ public class D3AccountDemo
 {
     public static void main(String args[])
     {
-    	//This is broken fix it lol
-    	ItemFunctions itemDatabase = new ItemFunctions();
-    	
-    	
-    	D3Account myd3 = new D3Account("Eurodance", "1289");
+    	//ItemFunctions itemDatabase = new ItemFunctions();
+
+    	D3Account myd3 = new D3Account("Alkaizer", "1727");
 
     	System.out.println("\n" + myd3.getHeroInfo());
    
@@ -24,8 +22,8 @@ public class D3AccountDemo
     		{
     		    System.out.println(String.format("%s: %s", entry.getKey(), (entry.getValue().equals(null) ? "" : entry.getValue())));
     		    
-    		    String tooltipParams = entry.getValue().getTooltipParams();
-		    	itemDatabase.addItem(tooltipParams, itemDatabase.getItemJson(tooltipParams));
+    		    //String tooltipParams = entry.getValue().getTooltipParams();
+		    //itemDatabase.addItem(tooltipParams, itemDatabase.getItemJson(tooltipParams));
     		}
 
     	}
